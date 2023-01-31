@@ -975,14 +975,17 @@ var swiperCatFourLevelThree = new Swiper(".swiper.catfour.levelthree", {
 // fetch data for cards
 
 //Fetch data for big talk cards
-fetch("http://localhost:1337/api/big-talks", {
-  method: "GET",
-  headers: {
-    Authorization:
-      "Bearer 7501ae3d10a89aa29146d84013760c10ebd3d19f4f8f6dbad9a9b238fc5566bcdee949eaa7cd1e114e4206592cc20732744e4ae5ca67761e4c856ddea594e1084375a0be8ea9e4e99937fa0490498cb2625964257350f88279a2eec3e58a7d5db05733c48e8737ef27576a73778e8971a7f685ff910a907fcf4aed061dd571b0",
-    "Content-Type": "application/json",
-  },
-})
+fetch(
+  "https://github.com/lukeanthonymcewan/emotionsmadeeasy/tree/new_branch_name/my-project/src/api/big-talks",
+  {
+    method: "GET",
+    headers: {
+      Authorization:
+        "Bearer 7501ae3d10a89aa29146d84013760c10ebd3d19f4f8f6dbad9a9b238fc5566bcdee949eaa7cd1e114e4206592cc20732744e4ae5ca67761e4c856ddea594e1084375a0be8ea9e4e99937fa0490498cb2625964257350f88279a2eec3e58a7d5db05733c48e8737ef27576a73778e8971a7f685ff910a907fcf4aed061dd571b0",
+      "Content-Type": "application/json",
+    },
+  }
+)
   .then((response) => response.json())
   .then((data) => {
     const categories = data.data;
