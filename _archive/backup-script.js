@@ -19,7 +19,7 @@ if (sessionStorage.getItem("visited") == null) {
   //loading heading animations
   let typeSplit = new SplitType(".loadingtext", {
     types: "words, chars",
-    tagName: "span"
+    tagName: "span",
   });
 
   let loadingscreentl = gsap.timeline({});
@@ -30,16 +30,16 @@ if (sessionStorage.getItem("visited") == null) {
     stagger: { amount: 0.8 },
     duration: 1.2,
     opacity: 0,
-    ease: "expo.out"
+    ease: "expo.out",
   });
-  
+
   loadingscreentl.from(
     ".loaderbar-wrapper",
     {
       delay: 1.8,
       duration: 0.8,
       opacity: 0,
-      ease: "power1.out"
+      ease: "power1.out",
     },
     0
   );
@@ -55,14 +55,14 @@ if (sessionStorage.getItem("visited") == null) {
 
   function endLoaderAnimation() {
     let outroTimeline = gsap.timeline({
-      onComplete: clickTrigger
+      onComplete: clickTrigger,
     });
     outroTimeline.to(".circle-one", {
       width: "300vw",
       height: "300vw",
       delay: 0.2,
       duration: 1.8,
-      ease: "power4.inOut"
+      ease: "power4.inOut",
     });
     outroTimeline.to(
       ".circle-two",
@@ -71,7 +71,7 @@ if (sessionStorage.getItem("visited") == null) {
         height: "300vw",
         delay: 0.3,
         duration: 1.8,
-        ease: "power4.inOut"
+        ease: "power4.inOut",
       },
       0
     );
@@ -82,7 +82,7 @@ if (sessionStorage.getItem("visited") == null) {
         opacity: 0,
         delay: 0,
         duration: 2,
-        ease: "power4.inOut"
+        ease: "power4.inOut",
       },
       0
     );
@@ -92,7 +92,7 @@ if (sessionStorage.getItem("visited") == null) {
         opacity: 1,
         delay: 0,
         duration: 0.3,
-        ease: "power2.in"
+        ease: "power2.in",
       },
       0
     );
@@ -101,7 +101,7 @@ if (sessionStorage.getItem("visited") == null) {
       backgroundColor: "#fac4f3",
       delay: 0.6,
       duration: 0.2,
-      ease: "power3.in"
+      ease: "power3.in",
     });
     gsap.from(
       ".splash-logo, .splash-heading, .splash-body, .slide-to-unlock, .eye-svg, .star-1, .star-2, .star-3, .star-4",
@@ -111,7 +111,7 @@ if (sessionStorage.getItem("visited") == null) {
         stagger: 0.1,
         opacity: 0,
         duration: 1,
-        ease: "power2.out"
+        ease: "power2.out",
       }
     );
     let starTimeline = gsap.timeline({ yoyo: true, repeat: -1 });
@@ -119,7 +119,7 @@ if (sessionStorage.getItem("visited") == null) {
       rotate: 10,
       duration: 2,
       stagger: 1,
-      ease: "power1.inOut"
+      ease: "power1.inOut",
     });
 
     //splash background animations
@@ -127,7 +127,7 @@ if (sessionStorage.getItem("visited") == null) {
     // SPLIT HEADING INTO CHAR
     let typeSplit = new SplitType(".splash-heading", {
       types: "words, chars",
-      tagName: "span"
+      tagName: "span",
     });
 
     let splashHeadingFloat = gsap.timeline({});
@@ -135,7 +135,7 @@ if (sessionStorage.getItem("visited") == null) {
       y: "-=16px",
       stagger: { amount: 1, yoyo: true, repeat: -1 },
       duration: 1.2,
-      ease: "power1.inOut"
+      ease: "power1.inOut",
     });
     splashHeadingFloat.to(
       $(".splash-heading.line-two").find(".char"),
@@ -143,21 +143,21 @@ if (sessionStorage.getItem("visited") == null) {
         y: "-=16px",
         stagger: { amount: 1, yoyo: true, repeat: -1 },
         duration: 1.2,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
       },
       0
     );
   }
 
   let tl = gsap.timeline({
-    onComplete: endLoaderAnimation
+    onComplete: endLoaderAnimation,
   });
   tl.to(counter, {
     value: 100,
     delay: 2,
     onUpdate: updateLoaderText,
     duration: loaderDuration,
-    ease: CustomEase.create("custom", customEase)
+    ease: CustomEase.create("custom", customEase),
   });
   tl.to(
     ".loader-bar",
@@ -165,7 +165,7 @@ if (sessionStorage.getItem("visited") == null) {
       width: "100%",
       delay: 2,
       duration: loaderDuration,
-      ease: CustomEase.create("custom", customEase)
+      ease: CustomEase.create("custom", customEase),
     },
     0
   );
@@ -213,12 +213,12 @@ Draggable.create(".drag-handle", {
 
       gsap.to(this.target, {
         x: this.x - (b.right - a.right + 8),
-        y: this.y - (b.top - a.top)
+        y: this.y - (b.top - a.top),
       });
       walkthroughAnimation();
       this.kill();
     }
-  }
+  },
 });
 let walkthroughTL = gsap.timeline({});
 let loadInTimeline = gsap.timeline({});
@@ -231,21 +231,21 @@ function walkthroughAnimation() {
   walkthroughTL.to(".splash-screen", {
     y: "-110vh",
     duration: 1.2,
-    ease: "power2.inOut"
+    ease: "power2.inOut",
   });
   walkthroughTL.fromTo(
     ".first-up-title-1, .first-up-title-2",
     {
       y: "+=32px",
-      opacity: 0
+      opacity: 0,
     },
     {
       y: 0,
       opacity: 1,
       duration: 1,
-      delay: 0.8,
+      delay: 1,
       stagger: 0.1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -253,37 +253,33 @@ function walkthroughAnimation() {
     y: "-=40px",
     opacity: 0,
     ease: "power4.in",
-    delay: 0.6,
+    delay: 0.8,
     stagger: 0.1,
-    duration: 1
+    duration: 1,
   });
   setTimeout(() => {
     unlockAnimation();
     $(".first-up-title").css("display", "none");
-  }, "3800");
+  }, "2500");
 }
 
 function unlockAnimation() {
-  loadInTimeline.to(
-    ".content-wrapper-categories",
-    {
-      scale: 1,
-      opacity: 1,
-      ease: "power2.out",
-      duration: 1.5
-    },
-    0
-  );
+  loadInTimeline.to(".content-wrapper-categories", {
+    scale: 1,
+    opacity: 1,
+    ease: "power2.out",
+    duration: 1.5,
+  });
   loadInTimeline.fromTo(
     ".animation-wrapper",
     {
-      scale: 0
+      scale: 0,
     },
     {
       scale: 1,
       delay: 0,
       duration: 1.5,
-      ease: "power2.out"
+      ease: "power2.out",
     },
     0
   );
@@ -291,27 +287,27 @@ function unlockAnimation() {
     ".select-category-button",
     {
       scale: 0.4,
-      opacity: 0
+      opacity: 0,
     },
     {
       scale: 1,
       opacity: 1,
       delay: 0.3,
       duration: 1.5,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
   loadInTimeline.fromTo(
     ".slider-container",
     {
-      scale: 0.3
+      scale: 0.3,
     },
     {
       scale: 1,
       delay: 0,
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -319,14 +315,14 @@ function unlockAnimation() {
     ".category-subtitle",
     {
       opacity: 0,
-      scale: 0.8
+      scale: 0.8,
     },
     {
       scale: 1,
       opacity: 1,
       delay: 0.4,
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -334,14 +330,14 @@ function unlockAnimation() {
     ".category-title",
     {
       opacity: 0,
-      scale: 0.8
+      scale: 0.8,
     },
     {
       scale: 1,
       opacity: 1,
       delay: 0.5,
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -350,7 +346,7 @@ function unlockAnimation() {
     {
       y: "+=20",
       scale: 0.8,
-      opacity: 0
+      opacity: 0,
     },
     {
       y: "-=20",
@@ -359,7 +355,7 @@ function unlockAnimation() {
       duration: 1,
       scale: 1,
       stagger: 0.1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -369,7 +365,7 @@ function unlockAnimation() {
       y: "+=32",
       opacity: 0,
       delay: 0,
-      duration: 0
+      duration: 0,
     },
     {
       y: "-=32",
@@ -377,7 +373,7 @@ function unlockAnimation() {
       delay: 0.5,
       duration: 1.5,
       stagger: 0.1,
-      ease: "power4.out"
+      ease: "power4.out",
     },
     0
   );
@@ -400,8 +396,8 @@ var swiperCat = new Swiper(".swiper.swiper-category", {
     clickable: true,
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + "</span>";
-    }
-  }
+    },
+  },
 });
 
 // swiper background transitions
@@ -422,7 +418,7 @@ $([
   fourthTitle,
   secondSubTitle,
   thirdSubTitle,
-  fourthSubTitle
+  fourthSubTitle,
 ]).css("opacity", "0");
 
 let titleDuration = 0.8;
@@ -455,7 +451,7 @@ function nextTo0() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -465,14 +461,14 @@ function nextTo0() {
       fourthTitle,
       secondSubTitle,
       thirdSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "-120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -488,7 +484,7 @@ function nextTo1() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -498,14 +494,14 @@ function nextTo1() {
       fourthTitle,
       firstSubTitle,
       thirdSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "-120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -521,7 +517,7 @@ function nextTo2() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -531,14 +527,14 @@ function nextTo2() {
       fourthTitle,
       firstSubTitle,
       secondSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "-120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -555,7 +551,7 @@ function nextTo3() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -565,14 +561,14 @@ function nextTo3() {
       thirdTitle,
       firstSubTitle,
       secondSubTitle,
-      thirdSubTitle
+      thirdSubTitle,
     ],
     {
       x: "-120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -603,7 +599,7 @@ function backTo0() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -613,14 +609,14 @@ function backTo0() {
       fourthTitle,
       secondSubTitle,
       thirdSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -636,7 +632,7 @@ function backTo1() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -646,14 +642,14 @@ function backTo1() {
       fourthTitle,
       firstSubTitle,
       thirdSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -669,7 +665,7 @@ function backTo2() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -679,14 +675,14 @@ function backTo2() {
       fourthTitle,
       firstSubTitle,
       secondSubTitle,
-      fourthSubTitle
+      fourthSubTitle,
     ],
     {
       x: "120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -704,7 +700,7 @@ function backTo3() {
       delay: titleDelay,
       stagger: titleStagger,
       duration: titleDuration,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
   gsap.to(
@@ -714,14 +710,14 @@ function backTo3() {
       thirdTitle,
       firstSubTitle,
       secondSubTitle,
-      thirdSubTitle
+      thirdSubTitle,
     ],
     {
       x: "120px",
       opacity: 0,
       delay: 0,
       duration: 1,
-      ease: "power3.out"
+      ease: "power3.out",
     }
   );
 }
@@ -801,7 +797,7 @@ $(".category-card-link").on("click", function () {
       y: transformValue[1],
       width: transformValue[2],
       height: transformValue[3],
-      borderRadius: "148px"
+      borderRadius: "148px",
     },
     {
       x: 0,
@@ -811,14 +807,14 @@ $(".category-card-link").on("click", function () {
       duration: 1,
       delay: 0,
       ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 "),
-      borderRadius: "0px"
+      borderRadius: "0px",
     }
   );
   gsap.fromTo(
     [closeContainer, popupTitle, popupBody, popupTags, popupPlayButton],
     {
       opacity: 0,
-      y: "+=40"
+      y: "+=40",
     },
     {
       y: "0",
@@ -827,44 +823,44 @@ $(".category-card-link").on("click", function () {
       delay: 0.2,
       stagger: 0.1,
       ease: "power4.out",
-      onComplete: makeActive
+      onComplete: makeActive,
     }
   );
   gsap.fromTo(
     tagContainer,
     {
-      opacity: 1
+      opacity: 1,
     },
     {
       opacity: 0,
       duration: 0.2,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.fromTo(
     [anim1, anim2, anim3, anim4],
     {
-      scale: 1
+      scale: 1,
     },
     {
       y: "+=16px",
       scale: 1.2,
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.fromTo(
     ".content-wrapper-categories",
     {
       scale: 1,
-      filter: "blur(0px)"
+      filter: "blur(0px)",
     },
     {
       scale: 0.8,
       filter: "blur(8px)",
       duration: 0.9,
       delay: 0,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
 });
@@ -912,7 +908,7 @@ $(".popup_close").on("click", function () {
       y: 0,
       width: "100vw",
       height: "100%",
-      borderRadius: "0px"
+      borderRadius: "0px",
     },
     {
       x: transformValue[0],
@@ -923,55 +919,55 @@ $(".popup_close").on("click", function () {
       onComplete: closePopup,
       duration: 0.9,
       delay: 0.05,
-      ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 ")
+      ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 "),
     }
   );
   gsap.fromTo(
     [closeContainer, popupTitle, popupBody, popupTags, popupPlayButton],
     {
-      opacity: 1
+      opacity: 1,
     },
     {
       opacity: 0,
       duration: 0.6,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.fromTo(
     [anim1, anim2, anim3, anim4],
     {
-      scale: 1.2
+      scale: 1.2,
     },
     {
       y: "0px",
       scale: 1,
       duration: 0.8,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.fromTo(
     tagContainer,
     {
-      opacity: 0
+      opacity: 0,
     },
     {
       opacity: 1,
       delay: 0.3,
       duration: 0.3,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.to(".popup_content_wrapper_1", {
     opacity: 1,
     duration: 1,
-    ease: "power4.out"
+    ease: "power4.out",
   });
 
   gsap.fromTo(
     ".content-wrapper-categories",
     {
       scale: 0.8,
-      filter: "blur(8px)"
+      filter: "blur(8px)",
     },
     {
       scale: 1,
@@ -979,7 +975,7 @@ $(".popup_close").on("click", function () {
       duration: 1,
       delay: 0.09,
       ease: "power4.out",
-      onComplete: popupClosed
+      onComplete: popupClosed,
     }
   );
 });
@@ -987,13 +983,13 @@ $(".popup_close").on("click", function () {
 //////////////////// Gameplay Code /////////////////////
 
 var swiper = new Swiper(".swiper.levelone", {
-  effect: "cards"
+  effect: "cards",
 });
 var swiper = new Swiper(".swiper.leveltwo", {
-  effect: "cards"
+  effect: "cards",
 });
 var swiper = new Swiper(".swiper.levelthree", {
-  effect: "cards"
+  effect: "cards",
 });
 
 $(".swiper-next").on("click", function () {
@@ -1014,7 +1010,7 @@ $(".play-game-button").on("click", function () {
       duration: 2,
       stagger: 0.1,
       delay: 1.2,
-      ease: "power4.out"
+      ease: "power4.out",
     });
     document.querySelector(".category-1-cards").style.opacity = 0;
     document.querySelector(".category-2-cards").style.opacity = 0;
@@ -1030,32 +1026,30 @@ $(".play-game-button").on("click", function () {
   firstStepNumbers.forEach((firstStepNumber) => {
     firstStepNumber.style.color = popupPrimaryColor;
   });
-  document.querySelector(
-    ".dismiss-first"
-  ).style.backgroundColor = popupPrimaryColor;
-  document.querySelector(
-    ".level-slider-element"
-  ).style.backgroundColor = popupSecondaryColor;
+  document.querySelector(".dismiss-first").style.backgroundColor =
+    popupPrimaryColor;
+  document.querySelector(".level-slider-element").style.backgroundColor =
+    popupSecondaryColor;
   gsap.to(".gameplay-underlay", {
     opacity: 0.5,
     duration: 1,
-    ease: "power4.out"
+    ease: "power4.out",
   });
   gsap.to(".popup_content_wrapper_1", {
     scale: 0.8,
     duration: 1,
-    ease: "power4.out"
+    ease: "power4.out",
   });
   gsap.fromTo(
     ".gameplay",
     {
-      y: "100vh"
+      y: "100vh",
     },
     {
       y: 0,
       delay: 0.4,
       duration: 1,
-      ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 ")
+      ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 "),
     }
   );
   document.querySelector(".level-chip-label.two").style.display = "flex";
@@ -1104,13 +1098,13 @@ $(".dismiss-first").on("click", function () {
     opacity: 0,
     duration: 1,
     ease: "power4.out",
-    onComplete: firstTimeDone
+    onComplete: firstTimeDone,
   });
   gsap.fromTo(
     ".category-1-cards, .category-2-cards, .category-3-cards, .category-4-cards, .gameplay-nav-bottom",
     {
       opacity: 0,
-      scale: 0.8
+      scale: 0.8,
     },
     {
       opacity: 1,
@@ -1118,7 +1112,7 @@ $(".dismiss-first").on("click", function () {
       duration: 1.5,
       delay: 0.3,
       stagger: -0.1,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   setGameplayCategory();
@@ -1210,33 +1204,33 @@ $(".close-gameplay").on("click", function () {
   gsap.fromTo(
     ".gameplay-underlay",
     {
-      opacity: 0.5
+      opacity: 0.5,
     },
     {
       opacity: 0,
       duration: 1,
-      ease: "power4.out"
+      ease: "power4.out",
     }
   );
   gsap.to(".popup_content_wrapper_1", {
     scale: 1,
     duration: 1,
-    ease: "power4.out"
+    ease: "power4.out",
   });
   gsap.to(".gameplay", {
     y: "100vh",
     duration: 1,
-    ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 ")
+    ease: CustomEase.create("custom", "M0,0 C0.11,0.494 0.1,1 1,1 "),
   });
   gsap.from(".content-wrapper-categories", {
     filter: "blur(8px)",
     scale: 0.8,
     duration: 1,
-    ease: "power2.out"
+    ease: "power2.out",
   });
   gsap.to(".gameplay-underlay", {
     opacity: 0,
     duration: 1,
-    ease: "power2.out"
+    ease: "power2.out",
   });
 });

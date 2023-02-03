@@ -131,7 +131,7 @@
             >
               <path
                 d="M10.002 18L18.0004 10"
-                stroke="#ffffff"
+                stroke="#f7efe2"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -139,7 +139,7 @@
               ></path>
               <path
                 d="M9.99666 2L17.9951 10"
-                stroke="#ffffff"
+                stroke="#f7efe2"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -147,7 +147,7 @@
               ></path>
               <path
                 d="M2 10L18 10"
-                stroke="#ffffff"
+                stroke="#f7efe2"
                 stroke-width="3"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -239,15 +239,19 @@
       </div>
     </div>
     <div class="loader">
-      <div class="loader-content">
-        <div class="loading-text-wrapper">
-          <h1 class="loadingtext">emotions, made easy</h1>
+      <div class="loading-wrapper">
+        <h4 class="loading-copy top">*vulnerability required</h4>
+        <div class="loader-content">
+          <div class="loading-text-wrapper">
+            <h1 class="loadingtext">emotions, made easy</h1>
+          </div>
+          <div class="loaderbar-wrapper">
+            <div class="loader-bar"></div>
+          </div>
         </div>
-
-        <div class="loaderbar-wrapper">
-          <div class="loader-bar"></div>
-        </div>
+        <h4 class="loading-copy bottom">*vulnerability required</h4>
       </div>
+
       <div class="circle-elements">
         <div class="circle-two"></div>
         <div class="circle-one"></div>
@@ -272,6 +276,7 @@
         </div>
         <a href="#" class="dismiss-first-button">Okay, let's get deep</a>
       </div>
+
       <div class="gameplay-wrapper">
         <div class="gameplay-top-nav">
           <div class="close-gameplay-button">
@@ -418,11 +423,16 @@
           </div>
         </div>
         <div class="gameplay-bottom-nav">
-          <div class="level-selector">
-            <p class="level-chip-label one active">Level One</p>
-            <p class="level-chip-label two">Level Two</p>
-            <p class="level-chip-label three">Level Three</p>
-            <div class="level-slider-element"></div>
+          <div class="bottom-nav-wrapper">
+            <div class="level-selector">
+              <p class="level-chip-label one active">Level One</p>
+              <p class="level-chip-label two">Level Two</p>
+              <p class="level-chip-label three">Level Three</p>
+              <div class="level-slider-element"></div>
+            </div>
+            <div class="level-change-message">
+              <p class="level-message">Take a deep breath—you've got this</p>
+            </div>
           </div>
         </div>
       </div>
@@ -467,6 +477,22 @@
       </div>
     </div>
     <div class="category">
+      <div class="about-overlay">
+        <h2>emotions, made easy</h2>
+        <p class="credits-copy">
+          Originally created as a personal side project, this card game is meant
+          for sparking meaningful conversations, deepening relationship and
+          generating surprising moments.<br /><br />
+          Design & code by
+          <span
+            ><a href="https://www.lukemcewan.com" target="”_blank”"
+              >Luke McEwan</a
+            ></span
+          >. Feel free to reach out with any questions or bugs or to say hi —
+          <a href="mailto:luke.mcewan@me.com">luke.mcewan@me.com</a>
+        </p>
+        <a href="#" class="close-about-button">Close me</a>
+      </div>
       <div class="category-overlay"></div>
       <div class="first-up-splash">
         <h2 class="first-up-title-1">First up,</h2>
@@ -474,7 +500,7 @@
       </div>
       <div class="category-content">
         <div class="categories-top-nav">
-          <h5>Pick your mood</h5>
+          <h5 class="mood-title">Swipe to explore moods</h5>
         </div>
         <!-- Slider main container -->
         <div class="slider-container">
@@ -493,22 +519,23 @@
           <a href="#" class="select-category-button">Select</a>
         </div>
         <div class="categories-bottom-nav">
-          <h5>Swipe to explore</h5>
+          <a href="#"><h5 class="about-me">About me</h5></a>
           <div class="swiper-dots"></div>
         </div>
       </div>
     </div>
-    <script src="scripts/gsap.min.js"></script>
-    <script src="scripts/split-type.js"></script>
-    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="/scripts/split-type.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="loader.js"></script>
-    <script src="scripts/Draggable.min.js"></script>
-    <script src="scripts/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Draggable.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/content/questiondata.js"></script>
+    <script src="/content/categorydata.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
