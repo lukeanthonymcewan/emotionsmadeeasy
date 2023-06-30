@@ -2,7 +2,7 @@
   "dependencies": {
     "@strapi/plugin-color-picker": "^4.6.0",
     "anime": "^0.1.2",
-    "gsap": "^3.11.4",
+    "gsap": "^3.12.1",
     "split-type": "^0.3.3",
     "strapi-plugin-import-export-entries": "^1.18.0",
     "swiper": "^8.4.6"
